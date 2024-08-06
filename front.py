@@ -7,11 +7,8 @@ from streamlit.runtime.scriptrunner import get_script_run_ctx
 import speech_recognition as sr
 session_id = get_script_run_ctx().session_id
 
-
-
 # Initialize recognizer class                                       
 r = sr.Recognizer()
-
 
 if "chat_uids" not in st.session_state:
     #chat_uids is a list of active chat_ids
@@ -108,10 +105,7 @@ for i in reversed(st.session_state.chat_uids):
     if col2.button("🗑",key=str(i)+"c2"):
         delete_chat(i)
 
-
-
 st.title("CA Assistant")
-
 
 
 # Calling the caBuddy endpoint of API to get LLM response by session_id + current chat
